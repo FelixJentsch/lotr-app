@@ -7,6 +7,13 @@ const VolumeDetails = () => {
     (volume) => volume.slug === "the-fellowship-of-the-ring"
   );
 
+  const volumeIndex = volumes.indexOf(volume);
+  const previousVolume = volumes[volumeIndex - 1];
+  const nextVolume = volumes[volumeIndex + 1];
+
+  const previousUrl = previousVolume ? `/volumes/${previousVolume.slug}` : null;
+  const nextUrl = nextVolume ? `/volumes/${nextVolume.slug}` : null;
+
   return (
     <div>
       <Link href="/volumes">← All Volumes</Link>
@@ -20,13 +27,18 @@ const VolumeDetails = () => {
         ))}
       </ul>
       <Image
-        /* src={`/images/${volume.cover}`} */
-        src="/resources/public/images/the-fellowship-of-the-ring"
+        src={volume.cover}
+        /* src="/images/the-fellowship-of-the-ring.png" */
+        /* src={"/images/" + volume.slug + ".png"} */
         width={140}
         height={230}
         alt={volume.title}
       />
-      ;
+
+      <br />
+      {previousUrl && <a href={previousUrl}>⬅️ Previous Volume </a>}
+
+      {nextUrl && <a href={nextUrl}> Next Volume ➡️ </a>}
     </div>
   );
 };
