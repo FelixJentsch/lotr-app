@@ -20,11 +20,13 @@ const VolumeDetails = () => {
         ))}
       </ul>
       <Image
-        src={`/public/images/${volume.cover}`}
+        /* src={`/images/${volume.cover}`} */
+        src="/resources/public/images/the-fellowship-of-the-ring"
         width={140}
         height={230}
         alt={volume.title}
-      ></Image>
+      />
+      ;
     </div>
   );
 };

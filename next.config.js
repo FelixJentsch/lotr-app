@@ -4,6 +4,11 @@ const nextConfig = {
     styledComponents: true,
   },
   reactStrictMode: true,
+
+  images: {
+    domains: ["localhost"],
+  },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
@@ -16,3 +21,10 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+/* module.exports = {
+  images: {
+    domains: ["localhost"],
+  },
+};
+ */

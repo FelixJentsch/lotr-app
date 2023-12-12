@@ -18,7 +18,7 @@ const VolumeDetails = () => {
         ))}
       </ul>
       <Image
-        src={`/public/images/${volume.cover}`}
+        src={`/images/${volume.cover}`}
         width={140}
         height={230}
         alt={volume.title}

@@ -11,9 +11,7 @@ export default function HomePage() {
       <ul>
         {volumes.map((volume) => (
           <li key={volume.slug}>
-            <Link href={`/volumes/${volume.slug}`} passHref={false}>
-              {volume.title}
-            </Link>
+            <Link href={`/volumes/${volume.slug}`}>{volume.title}</Link>
           </li>
         ))}
       </ul>
